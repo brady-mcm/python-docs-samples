@@ -24,12 +24,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
-    return 'Hello World! Go to the about page to find out more about this!'
-
-@app.route('/about')
-def hello():
-    """Return a friendly HTTP greeting."""
-    return 'This is the about page for me COSC360 first lab!'
+    return 'Hello World! This is Lab 1 for COSC360.'
 
 
 if __name__ == '__main__':
