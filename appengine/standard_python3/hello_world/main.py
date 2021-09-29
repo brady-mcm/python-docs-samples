@@ -24,12 +24,15 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
-    return 'Hello World! This is Lab 1 for COSC360. \nBrady McMechan 300291577'
+    return 'Hello World! This is Lab 1 for COSC360. Brady McMechan 300291577'
 
 @app.route('/version')
 def versA():
     return 'This is app version B!'
 
+@app.route('/about')
+def about():
+    return 'The about page.'
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
     # Engine, a webserver process such as Gunicorn will serve the app. This
