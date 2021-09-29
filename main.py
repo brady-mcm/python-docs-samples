@@ -28,7 +28,7 @@ def hello():
 
 @app.route('/version')
 def versA():
-    return 'This is app version A'
+    return 'This is app version B!'
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
