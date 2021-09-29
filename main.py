@@ -26,10 +26,10 @@ def hello():
     """Return a friendly HTTP greeting."""
     return 'Hello World! This is Lab 1 for COSC360. \nBrady McMechan 300291577'
 
-@app.route('/')
+@app.route('/version')
 def versA():
     return 'This is app version A'
-    
+
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
     # Engine, a webserver process such as Gunicorn will serve the app. This
