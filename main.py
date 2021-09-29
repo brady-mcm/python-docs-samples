@@ -30,7 +30,7 @@ def hello():
 def versA():
     return 'This is app version B!'
 
-@app.roite('/instance')
+@app.route('/instance')
 def getid():
     instanceid = os.getenv('GAE_INSTANCE')
     return str(instanceid)
