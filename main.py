@@ -17,7 +17,7 @@
 from flask import Flask, request, redirect
 import os, json
 from google.cloud import datastore
-from datetime import date, datetime
+from datetime import datetime
 
 dataclient = datastore.Client()
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
@@ -98,7 +98,7 @@ def submit_post():
         content = request.form['content']
         title = request.form['title']
         date_format = '%m/%d/%Y %H:%M:%S'
-        time = str(datetime.strftime(date_format))
+        time = str(datetime.utcnow())
         post = json.dumps([content, title, time])
         ent = dataclient.key('data', 'posts')
         posts = dataclient.get(key=ent)
