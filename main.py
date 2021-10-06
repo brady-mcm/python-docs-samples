@@ -80,6 +80,8 @@ def submit_post():
         content = request.form['content']
         title = request.form['title']
         time = str(datetime.utcnow())
+    else:
+        return redirect('/')    
         
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
