@@ -73,7 +73,7 @@ def edit_page():
     with open('editor.html', 'r') as page:
         return page.read()
 
-@app.route('/submit')
+@app.route('/submit', methods = ['POST'])
 def submit_post():
     password = request.form['pass']
     if password == "P@ssW0rd!":
