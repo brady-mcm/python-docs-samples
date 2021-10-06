@@ -15,7 +15,7 @@
 # [START gae_python38_app]
 # [START gae_python3_app]
 from flask import Flask, request, redirect
-import os
+import os, json
 from google.cloud import datastore
 from datetime import datetime
 
@@ -27,8 +27,24 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     addVisitor()
-    """Return a friendly HTTP greeting."""
-    return 'Hello World! This is Lab 1 for COSC360. This is for Brady McMechan 300291577'
+    ent = dataclient.key('data', 'posts')
+    posts = dataclient.get(key=ent)
+    article = ""
+    with open('article.html', 'r') as page:
+        article = page.read()
+        html =""
+    if posts:
+        for post in posts['posts']:
+            array = json.loads(post)
+            raw = article.replace("!content!", array[0])
+            raw = raw.replace("!title!", array[1])
+            raw = raw.replace("!time!", array[2])
+            html += raw
+        with open('main.html', 'r') as page:
+            main = page.read()
+        return main.replace("!articles!", html)
+    else:
+        return 'No Posts! Go to /editor and make your first post!'
 
 @app.route('/version')
 def versA():
@@ -70,16 +86,29 @@ def getVisitor():
 
 @app.route('/editor')
 def edit_page():
+    addVisitor()
     with open('editor.html', 'r') as page:
         return page.read()
 
 @app.route('/submit', methods = ['POST'])
 def submit_post():
+    addVisitor()
     password = request.form['pass']
     if password == "P@ssW0rd!":
         content = request.form['content']
         title = request.form['title']
         time = str(datetime.utcnow())
+        post = json.dumps([content, title, time])
+        ent = dataclient.key('data', 'posts')
+        posts = dataclient.get(key=ent)
+        if posts:
+            posts['posts'] = [post] + posts['posts']
+            dataclient.put(posts)
+        else:
+            posts = datastore.Entity(key=ent)
+            posts['posts'] = [post]
+            dataclient.put(posts)
+        return redirect('/')    
     else:
         return redirect('/')    
 
