@@ -11,7 +11,7 @@
 	<!-- SCeditor imports -->
 	<script src="https://cdn.jsdelivr.net/npm/sceditor@3/minified/sceditor.min.js"></script>
 	<!-- Page Title -->
-	<title>Welcome to [Insert Name Here]'s Blog!</title>
+	<title>Welcome to Brady's Blog!</title>
   </head>
   <body style="background-color: transparent;">
 	<div class="container">
@@ -23,6 +23,24 @@
 			  <div class="card-body">
 				<h5 class="card-title">Add New Post</h5>
 				<!-- Insert your form here! -->
+				<form action="/submit" method = "POST">
+					<input type="text" class="form-control"  name = "title" placeholder="Title of your Post" style="margin-bottom: 25px;">
+					<textarea id = "editor" name ="content" style = "width: 100%; height: 500px;"></textarea>
+					<script src="https://cdn.jsdeliver.net/npm/sceditor@3/minifield/formats/xhtml.min.js"></script>
+					<script>
+						var textarea = document.getElementById('editor');
+						sceditor.create(textarea, {
+							format: 'xhtml',
+							style : 'https://cdn.jsdeliver.net/npm/sceditor@3/minifield/themese/content/default.min.css'
+						});
+					</script>
+					<div class="input-group mb-3" style = "margin-top: 25px;">
+						<input type = "text" name = "pass" class ="form-control" placeholder = "Password" aria-label="Password" aria-describedby="basic-addon2">
+						<div class="input-group-append">
+							<input type="submit" class="btn btn-outline-secondary">
+						</div>
+					</div>
+				</form>
 			  </div>
 			</div>
 		</div>
