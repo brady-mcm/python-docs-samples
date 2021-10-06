@@ -14,9 +14,10 @@
 
 # [START gae_python38_app]
 # [START gae_python3_app]
-from flask import Flask
+from flask import Flask, request, redirect
 import os
 from google.cloud import datastore
+from datetime import datetime
 
 dataclient = datastore.Client()
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
@@ -72,6 +73,14 @@ def edit_page():
     with open('editor.html', 'r') as page:
         return page.read()
 
+@app.route('/submit')
+def submit_post():
+    password = request.form['pass']
+    if password == "P@ssW0rd!":
+        content = request.form['content']
+        title = request.form['title']
+        time = str(datetime.utcnow())
+        
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
     # Engine, a webserver process such as Gunicorn will serve the app. This
