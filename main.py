@@ -44,7 +44,9 @@ def hello():
             main = page.read()
         return main.replace("!articles!", html)
     else:
-        return 'No Posts! Go to /editor and make your first post!'
+        with open('main.html', 'r') as page:
+            main = page.read()
+        return main.replace("!articles!", 'No Posts! Go make your first blog post!')
 
 @app.route('/version')
 def versA():
