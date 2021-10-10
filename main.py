@@ -44,7 +44,7 @@ def hello():
             main = page.read()
         return main.replace("!articles!", html)
     else:
-        with open('empty.html', 'r') as page:
+        with open('main.html', 'r') as page:
             mainE = page.read()
         return mainE.replace("!articles!", 'No Posts! Go make your first blog post!')
 
