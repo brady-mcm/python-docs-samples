@@ -53,6 +53,13 @@ def versA():
     addVisitor()
     return 'This is app version B!'
 
+@app.route('/about')
+def aboutMe():
+    addVisitor()
+    with open() as page:
+        mainA = page.read()
+        return mainA
+
 @app.route('/instance')
 def getid():
     addVisitor()
