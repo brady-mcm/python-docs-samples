@@ -56,9 +56,9 @@ def versA():
 @app.route('/about')
 def aboutMe():
     addVisitor()
-    with open() as page:
+    with open('about.html', 'r') as page:
         mainA = page.read()
-        return mainA
+    return mainA
 
 @app.route('/instance')
 def getid():
