@@ -34,8 +34,7 @@
 		
 		.sidenav a {
 		  padding: 8px 8px 8px 32px;
-		  text-decoration: none;
-		  font-size: 25px;
+		  font-size: 30px;
 		  color: #f9d342;
 		  display: block;
 		  transition: 0.3s;
@@ -63,21 +62,24 @@
 		  .sidenav a {font-size: 18px;}
 		}
 
-		.rows:after {
-  			content: "";
-  			display: table;
-  			clear: both;
+		div.image {
+			border: 1px solid black;
 		}
-		.columns {
- 			float: left;
-  			width: 200px;
-  			padding: 10px;
+		div.image img{
+			width: 100%;
+			height: auto;
 		}
-		.columns img {
-  			opacity: 0.8; 
+
+		.box{
+			padding: 0 6px;
+			float: left;
+			width: 24%;
 		}
-		.columns img:hover {
-  			opacity: 1;
+		@media only screen and (max-width: 700px) {
+  			.box {
+   				width: 49.99999%;
+    			margin: 6px 0;
+  			}
 		}
 	</style>
   </head>
@@ -102,17 +104,14 @@
 			<h5>Hobbies</h5>
 			<p>I thoroughly enjoy playing Video Games, Soccer and Wake-Surfing. I watch alot of different sports, most notably Football, every weekend with my Dad.</p>
 			
-			<div class ="rows">
-				<div class = "columns">
+
+			<div class="box">
+				<div class = "image">
 					<img src="https://scontent.fyvr3-1.fna.fbcdn.net/v/t1.18169-9/13335601_1819533941609687_93109497350153929_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=6blf4APd7BYAX8Kh4Ax&_nc_ht=scontent.fyvr3-1.fna&oh=f02a30591c17f71557ce673017dbbed8&oe=618CD78C">
 				</div>
-				<div class = "columns">
-					<img src="https://scontent.fyvr3-1.fna.fbcdn.net/v/t31.18172-8/13268451_1815028292060252_3609934321926786062_o.jpg?_nc_cat=107&ccb=1-5&_nc_sid=19026a&_nc_ohc=0RjH8Yj2MxkAX_Mca6b&_nc_ht=scontent.fyvr3-1.fna&oh=cbfc263e0e92d0457c0679ee2736b0a7&oe=618D5333">
-				</div>
-				<div class = "columns">
-					<img src="https://scontent.fyvr3-1.fna.fbcdn.net/v/t31.18172-8/13268451_1815028292060252_3609934321926786062_o.jpg?_nc_cat=107&ccb=1-5&_nc_sid=19026a&_nc_ohc=0RjH8Yj2MxkAX_Mca6b&_nc_ht=scontent.fyvr3-1.fna&oh=cbfc263e0e92d0457c0679ee2736b0a7&oe=618D5333">
-				</div>
-				<div class = "columns">
+			</div>
+			<div class="box">
+				<div class = "image">
 					<img src="https://scontent.fyvr3-1.fna.fbcdn.net/v/t31.18172-8/13268451_1815028292060252_3609934321926786062_o.jpg?_nc_cat=107&ccb=1-5&_nc_sid=19026a&_nc_ohc=0RjH8Yj2MxkAX_Mca6b&_nc_ht=scontent.fyvr3-1.fna&oh=cbfc263e0e92d0457c0679ee2736b0a7&oe=618D5333">
 				</div>
 			</div>
