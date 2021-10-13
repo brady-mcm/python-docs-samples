@@ -104,17 +104,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script>
 		myBTN = document.getElementById("fixed");
-		function backToTop(){
-			document.documentElement.scrollTop = 0;
-		}
 
-		window.onscroll = function(){scroll()}
+		window.onscroll = function(){scroll()};
 		function scroll(){
 			if(document.docuemtnElement.scrollTop > 15 || document.body.scrollTop > 15){
 				myBTN.style.display = "block";
 			}else{
 				myBTN.style.display="none";
 			}
+		}
+		function backToTop(){
+			document.documentElement.scrollTop = 0;
 		}
 	</script>
 	<script>
