@@ -66,7 +66,7 @@
 		  .sidenav {padding-top: 15px;}
 		  .sidenav a {font-size: 18px;}
 		}
-		#fixed{
+		#fixeBTN{
 			position:fixed;
 			bottom:10px;
 			right:10px;
@@ -80,7 +80,7 @@
 	</style>
   </head>
   <body style="background-color: transparent;">
-	<button id="fixed" onclick="backToTop()">Back to Top</button>
+	<button id="fixedBTN" onclick="backToTop()">Back to Top</button>
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		<a href="/">Home</a>
@@ -103,8 +103,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script>
-		var myBTN = document.getElementById("fixed");
-
+		var myBTN = document.getElementById("fixedBTN");
 		window.onscroll = function(){scroll()};
 		function scroll(){
 			if(document.docuemtnElement.scrollTop > 15 || document.body.scrollTop > 15){
