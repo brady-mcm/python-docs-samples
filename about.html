@@ -85,10 +85,21 @@
 				width:100%;	
 			}
 		}
+		#fixedBTN{
+			position:fixed;
+			bottom:10px;
+			right:10px;
+			background-color:black;
+			color: #f9d342;
+			width:150px;
+			height: 50px;
+			border-radius:10px;
+			visibility: hidden;
+		}
 	</style>
   </head>
   <body style="background-color: transparent;">
-	
+	<button id="fixedBTN" onclick="backToTop()">Back to Top</button>
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		<a href="/">Home</a>
@@ -136,6 +147,20 @@
 		function closeNav() {
 		  document.getElementById("mySidenav").style.width = "0";
 		}
-		</script>
+	</script>
+	<script>
+		var myBTN = document.getElementById("fixedBTN");
+		window.onscroll = function(e){
+			if(document.documentElement.scrollTop > 20 || document.body.scrollTop > 20){
+				myBTN.style.visibility = "visible";
+			}else{
+				myBTN.style.visibility="hidden";
+			}
+		};
+		
+		function backToTop(){
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
 </body>
 </html>
